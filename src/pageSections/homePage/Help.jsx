@@ -16,7 +16,7 @@ export default function Help() {
           Contact Support
         </Button>
       </div>
-      <div className="my-6 md:my-0 flex-1 bg-blue-400">
+      <div className="my-6 md:my-0 flex-1 ">
         <div className="py-4 px-2 hover:bg-[--light-blue] rounded-lg">
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">

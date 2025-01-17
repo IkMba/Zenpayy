@@ -140,16 +140,15 @@ body,
   box-sizing: border-box;
 }
 
-.marquee--item {
+/* .marquee--item {
   animation-duration: 15s;
   animation-iteration-count: infinite;
   animation-name: marquee-content;
   animation-timing-function: linear;
-  /* animation-timeline: ; */
-  /* animation-spee */
-  padding: 5px 15px 5px 15px;
-  /* animation: ; */
-}
+   animation-timeline: ; 
+   animation-spee 
+   animation: ; 
+} */
 
 .marquee:hover-pause:hover .marquee-item {
   animation-play-state: paused;

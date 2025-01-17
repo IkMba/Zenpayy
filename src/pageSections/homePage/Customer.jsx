@@ -4,7 +4,7 @@ import { Separator } from "@/components/ui/separator";
 
 const Customer = () => {
   return (
-    <div className="px-12 md:px-32 bg-orange-300">
+    <div className="px-12 md:px-32">
       <h2 className="font-bold text-4xl">Customer Stories</h2>
       <div className=" w-[100%] py-8 flex flex-col justify-between  md:py-8 md:flex-row md:gap-24 lg:max-w-[1000px] ">
         <CustomerCarousel />
@@ -30,7 +30,7 @@ const Customer = () => {
         <img src={fastCompany} alt="" className="w-[200px] marquee--item" />
         <img src={fastCompany} alt="" className="w-[200px] marquee--item" />
         <img src={fastCompany} alt="" className="w-[200px] marquee--item" />
-        <img src={fastCompany} alt="" className="w-[200px] marquee--item" />
+        {/* <img src={fastCompany} alt="" className="w-[200px] marquee--item" /> */}
       </div>
     </div>
   );

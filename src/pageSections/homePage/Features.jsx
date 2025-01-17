@@ -6,7 +6,7 @@ import userfriendly from "@/assets/userfriendly.png";
 
 export default function Features() {
   return (
-    <div className="py-16 px-12 bg-yellow-200">
+    <div className="py-16 px-12">
       <div className="text-center font-semibold max-w-[500px] mx-auto">
         <h2 className="text-3xl font-semibold my-4">
           Empower Your Financial Journey with Seamless Solutions
