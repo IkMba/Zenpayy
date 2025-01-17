@@ -10,15 +10,14 @@
     --light-shade: #27414a;
     --torq-blue: #7ed6df;
     /* --light-blue: #f1f5f9; */
-    --light-blue: #E8F0FE;
+    --light-blue: #e8f0fe;
     --gray: #97a1ac;
     --gray2: #74787e;
-    --blue:#062863;
+    --blue: #062863;
 
-    --destructive:red;
+    --destructive: red;
 
     --destructive-foreground: 0 0% 98%;
-
 
     /*  
      --background: 0 0% 100%;
@@ -127,13 +126,15 @@
   /* * {
      @apply border-border; 
   } */
-  body {
+  body,
+  * {
     /* @apply bg-background text-foreground; */
     font-family: Sora;
     box-sizing: border-box;
   }
 }
-body {
+body,
+* {
   /* @apply bg-background text-foreground; */
   font-family: Sora;
   box-sizing: border-box;
