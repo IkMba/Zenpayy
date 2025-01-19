@@ -82,12 +82,14 @@ export default function SignupForm3() {
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-4 p-6 bg-gray-50 rounded-lg md:p-10"
       >
-        <div>
-          <h2 className="text-2xl font-bold">Login</h2>
-          <FormDescription>
-            View and change your profile information here
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-[--blue]">Signup</h2>
+          <FormDescription className="text-[--gray2] font-medium">
+            Create an account to start using our services
           </FormDescription>
         </div>
+        <h3 className="font-semibold text-xl pt-4 ">Account information</h3>
+
         <FormField
           control={form.control}
           name="accountType"
@@ -190,18 +192,18 @@ export default function SignupForm3() {
           )}
         />
         <div>
-          <Button
-            onClick={(e) => {
-              e.preventDefault();
-              dispatch(prev());
-            }}
-            className="bg-orange-500"
-          >
-            Go back
-          </Button>
-          <Button type="submit" className="bg-orange-500">
-            Submit
-          </Button>
+          <div className="flex justify-between pt-4">
+            <Button
+              onClick={(e) => {
+                e.preventDefault();
+                dispatch(prev());
+              }}
+              className="bg-[--blue] text-white"
+            >
+              Go back
+            </Button>
+            <Button type="submit" className="bg-[--blue]  text-white ">Submit</Button>
+          </div>
         </div>
       </form>
     </Form>

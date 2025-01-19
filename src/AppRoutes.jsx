@@ -4,6 +4,11 @@ import AboutPage from "./pages/AboutPage";
 import Layout from "./pages/Layout";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
+import DashboardLayout from "./pages/DashboardLayout";
+import DashboardHome from "./pages/DashboardHome";
+import DashboardInvest from "./pages/DashboardInvest";
+import DashboardLoans from "./pages/DashboardLoans";
+import DashboardSavings from "./pages/DashboardSavings";
 
 const AppRoutes = () => {
   return (
@@ -24,16 +29,38 @@ const AppRoutes = () => {
           </Layout>
         }
       />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<SignupPage />} />
       <Route
-        path="/login"
+        path="/dashboard"
         element={
-            <LoginPage />
+          <DashboardLayout>
+            <DashboardHome />
+          </DashboardLayout>
         }
       />
       <Route
-        path="/register"
+        path="/dashboard/savings"
         element={
-            <SignupPage />
+          <DashboardLayout>
+            <DashboardSavings />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/dashboard/invest"
+        element={
+          <DashboardLayout>
+            <DashboardInvest />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/dashboard/loans"
+        element={
+          <DashboardLayout>
+            <DashboardLoans />
+          </DashboardLayout>
         }
       />
       <Route path="*" element={<Navigate to="/" />} />

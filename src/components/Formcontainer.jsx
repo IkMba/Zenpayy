@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Formcontainer({ children }) {
   return (
-    <div className="max-w-[100%] overflow-hidden bg-[--blue] h-screen py-16 px-4">
+    <div className=" bg-[--blue] min-h-screen py-16 px-3">
       <h1 className="text-white font-semibold text-4xl mb-8 text-center">
         Zenpay
       </h1>

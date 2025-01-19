@@ -89,7 +89,7 @@ export default function SignupForm1() {
               <FormItem>
                 <FormLabel>Username</FormLabel>
                 <FormControl>
-                  <Input {...field} className="bg-white" />
+                  <Input {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

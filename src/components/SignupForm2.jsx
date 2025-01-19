@@ -38,26 +38,31 @@ import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 
 import { useDispatch, useSelector } from "react-redux";
-import { addDetails, getRegisterDetails, next, prev } from "@/utils/registerSlice";
+import {
+  addDetails,
+  getRegisterDetails,
+  next,
+  prev,
+} from "@/utils/registerSlice";
 
 const formSchema = z
   .object({
     phone: z.string({
-      required_error: "phone  Number is required",
+      required_error: "Phone Number is required",
     }),
     // jobTitle: z.string({
     //   required_error: " JOB title is required",
     // }),
     address: z
       .string({
-        required_error: "address is required",
-      })
-      .min(8, "Password must not be less than eight characters"),
+        required_error: "Address is required",
+      }),
+      // .min(10, "Please specify a detailed address"),
     city: z.string({
-      required_error: "city is required",
+      required_error: "City is required",
     }),
     state: z.string({
-      required_error: "state is required",
+      required_error: "State is required",
     }),
     dob: z.date({
       required_error: "Date of birth is required",
@@ -79,13 +84,7 @@ export default function SignupForm2() {
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: userDetails,
-    // defaultValues: {
-    //     username:""
-    // }
   });
-  //   useEffect(() => {
-  //     form.reset(currentUser);
-  //   }, [currentUser, form]);
 
   function onSubmit(values) {
     console.log(values);
@@ -97,14 +96,15 @@ export default function SignupForm2() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 p-6 bg-gray-50 rounded-lg md:p-10"
+        className="space-y-4 p-6 rounded-lg md:p-10"
       >
-        <div>
-          <h2 className="text-2xl font-bold">Login</h2>
-          <FormDescription>
-            View and change your profile information here
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-[--blue]">Signup</h2>
+          <FormDescription className="text-[--gray2] font-medium">
+            Create an account to start using our services
           </FormDescription>
         </div>
+        <h3 className="font-semibold text-xl pt-4 ">Additional Info</h3>
         <FormField
           control={form.control}
           name="phone"
@@ -113,7 +113,7 @@ export default function SignupForm2() {
               <FormLabel>Phone Number</FormLabel>
 
               <FormControl>
-                <Input {...field} className="bg-white" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -222,16 +222,18 @@ export default function SignupForm2() {
             </FormItem>
           )}
         />
-        <Button
-          onClick={(e) => {
-            e.preventDefault();
-            dispatch(prev());
-          }}
-          className="bg-orange-500"
-        >
-          Go back
-        </Button>
-        <Button className="bg-orange-500">Continue</Button>
+        <div className="flex justify-between pt-4">
+          <Button
+            onClick={(e) => {
+              e.preventDefault();
+              dispatch(prev());
+            }}
+            className="bg-[--blue] text-white"
+          >
+            Go back
+          </Button>
+          <Button className="bg-[--blue] text-white ">Continue</Button>
+        </div>
       </form>
     </Form>
   );
