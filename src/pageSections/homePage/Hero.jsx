@@ -15,7 +15,7 @@ const Hero = () => {
           <Star /> Trusted by our clients for 10 years now
         </Button>
         <div>
-          <h1 className="text-[2.8rem] md:text-6xl my-3 mt-0 font-bold">
+          <h1 className="text-[2.6rem] md:text-6xl my-3 mt-0 font-bold">
             <span className="text-[--torq-blue]">Re</span>volutionize Your Pa<span className="text-[--torq-blue]">yments Exper</span>ience
           </h1>
           {/* <h1 className="text-5xl md:text-5xl my-3 font-semibold">
