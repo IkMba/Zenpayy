@@ -2,8 +2,10 @@ import DashActions from '@/components/dashboard/DashActions'
 import DashCards from '@/components/dashboard/DashCards'
 import TransactionCard from '@/components/dashboard/TransactionCard'
 import TransactionTable from '@/components/dashboard/TransactionTable'
+import { getUser } from '@/utils/registerSlice'
 import { Banknote, CircleUser, Lock, Shield, TrendingUp, User } from 'lucide-react'
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const transactionDetails = {
     description:"September Salary",
@@ -14,11 +16,12 @@ type:""
 }
 
 export default function DashboardHome() {
+  const currentUser = useSelector(getUser)
   return (
     <div className='py-12 px-4 w-screen md:w-full '>
         <div className='flex justify-between items-center mb-8'>
             <div>
-            <h2 className='text-2xl font-semibold'>Mba,</h2>
+            <h2 className='text-2xl font-semibold'>{currentUser.name},</h2>
             <h3 className='text-[--gray2] text-sm'>Welcome to your dashboard </h3>
             </div>
             <User className='' color='#062863' fill='#062863' size={32} />

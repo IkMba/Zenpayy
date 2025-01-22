@@ -26,6 +26,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useDispatch, useSelector } from "react-redux";
 import { addDetails, getRegisterDetails, prev } from "@/utils/registerSlice";
+import { useCreateUser } from "@/api/MyUserApi";
 
 const formSchema = z
   .object({
@@ -57,6 +58,7 @@ const formSchema = z
 export default function SignupForm3() {
   const userDetails = useSelector(getRegisterDetails);
   const dispatch = useDispatch();
+  const {createUser,isLoading,isError} = useCreateUser()
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -73,6 +75,8 @@ export default function SignupForm3() {
     await dispatch(addDetails(values));
     const regDetails = userDetails;
     console.log(regDetails);
+
+   await createUser({...regDetails,...values})
     console.log("submitted");
   };
 
@@ -82,6 +86,7 @@ export default function SignupForm3() {
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-4 p-6 bg-gray-50 rounded-lg md:p-10"
       >
+        {isError && <h2>{isError}</h2>}
         <div className="text-center">
           <h2 className="text-2xl font-bold text-[--blue]">Signup</h2>
           <FormDescription className="text-[--gray2] font-medium">
@@ -103,9 +108,9 @@ export default function SignupForm3() {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="personal">Personal Account</SelectItem>
-                  <SelectItem value="business">Business Account</SelectItem>
-                  <SelectItem value="domiciliary">Domiciliary</SelectItem>
+                  <SelectItem value="Personal account">Personal Account</SelectItem>
+                  <SelectItem value="Business account">Business Account</SelectItem>
+                  <SelectItem value="Domiciliary account">Domiciliary</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
@@ -125,17 +130,17 @@ export default function SignupForm3() {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="a-Less than$10,000">
+                  <SelectItem value="Less than $10,000">
                     {" "}
                     Less than$10,000
                   </SelectItem>
-                  <SelectItem value="b-$10,000 - $100,000">
+                  <SelectItem value="$10,000 - $100,000">
                     $10,000 - $100,000
                   </SelectItem>
-                  <SelectItem value="c-$100,000 - $500,000">
+                  <SelectItem value="$100,000 - $500,000">
                     $100,000 - $500,000
                   </SelectItem>
-                  <SelectItem value="d-Above  $500,000">
+                  <SelectItem value="Above $500,000">
                     {" "}
                     Above $500,000
                   </SelectItem>
@@ -158,9 +163,9 @@ export default function SignupForm3() {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="employed"> Employed</SelectItem>
-                  <SelectItem value="self-employed"> Self-employed</SelectItem>
-                  <SelectItem value="business-owner">
+                  <SelectItem value="Employed"> Employed</SelectItem>
+                  <SelectItem value="Self-employed"> Self-employed</SelectItem>
+                  <SelectItem value="Business-owner">
                     {" "}
                     Business Owner
                   </SelectItem>
@@ -183,8 +188,8 @@ export default function SignupForm3() {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="single"> Single</SelectItem>
-                  <SelectItem value="married"> Married</SelectItem>
+                  <SelectItem value="Single"> Single</SelectItem>
+                  <SelectItem value="Married"> Married</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />

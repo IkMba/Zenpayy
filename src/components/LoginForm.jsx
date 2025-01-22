@@ -22,6 +22,7 @@ import {
   next,
   prev,
 } from "@/utils/registerSlice";
+import { useLogin } from "@/api/MyUserApi";
 
 const formSchema = z.object({
   email: z.string({
@@ -34,6 +35,7 @@ const formSchema = z.object({
     .min(8, "Password must not be less than eight characters"),
 });
 export default function SignupForm1() {
+  const {loginUser,isLoading} = useLogin()
   const userDetails = useSelector(getRegisterDetails);
   const dispatch = useDispatch();
 
@@ -49,17 +51,17 @@ export default function SignupForm1() {
   //   }, [currentUser, form]);
 
   // console.log(userDetails)
-  function onSubmit(values) {
+  async function onSubmit(values) {
     console.log(values);
-    dispatch(addDetails(values));
-    dispatch(next());
+
+    await loginUser(values)
   }
 
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 p-4 rounded-lg "
+        className="space-y-4 p-10 rounded-lg "
       >
         <div className="text-center">
           <h2 className="text-2xl font-bold text-[--blue]">Login</h2>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -61,8 +61,8 @@ const formSchema = z
     city: z.string({
       required_error: "City is required",
     }),
-    state: z.string({
-      required_error: "State is required",
+    country: z.string({
+      required_error: "Country is required",
     }),
     dob: z.date({
       required_error: "Date of birth is required",
@@ -80,6 +80,20 @@ export default function SignupForm2() {
   const userDetails = useSelector(getRegisterDetails);
   const dispatch = useDispatch();
   console.log("rendered");
+
+  const [countries, setCountries] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState({});
+
+  useEffect(() => {
+    fetch(
+      "https://valid.layercode.workers.dev/list/countries?format=select&flags=true&value=code"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setCountries(data.countries);
+        setSelectedCountry(data.userSelectValue);
+      });
+  }, []);
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -131,8 +145,9 @@ export default function SignupForm2() {
                     <SelectValue placeholder="Choose your gender" />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent>
-                  <SelectItem value="male">Male</SelectItem>
+                <SelectContent className="bg-white">
+                  
+                   <SelectItem value="male">Male</SelectItem>
                   <SelectItem value="female">Female</SelectItem>
                   <SelectItem value="undefined">Undefined</SelectItem>
                 </SelectContent>
@@ -167,7 +182,7 @@ export default function SignupForm2() {
                     </Button>
                   </FormControl>
                 </PopoverTrigger>
-                <PopoverContent className="w-auto p-0" align="start">
+                <PopoverContent className="w-auto p-0 bg-white" align="start">
                   <Calendar
                     mode="single"
                     selected={field.value}
@@ -211,13 +226,24 @@ export default function SignupForm2() {
         />
         <FormField
           control={form.control}
-          name="state"
+          name="country"
           render={({ field }) => (
             <FormItem>
-              <FormLabel> State</FormLabel>
-              <FormControl>
-                <Input {...field} className="bg-white" />
-              </FormControl>
+            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Country" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent className="bg-white">
+                  {countries.map(item => (
+                    <SelectItem value={item.label}>{item.label}</SelectItem>
+                  ))}
+                  {/* <SelectItem value="male">Male</SelectItem>
+                  <SelectItem value="female">Female</SelectItem>
+                  <SelectItem value="undefined">Undefined</SelectItem> */}
+                </SelectContent>
+              </Select>
               <FormMessage />
             </FormItem>
           )}

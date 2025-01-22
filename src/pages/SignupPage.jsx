@@ -12,7 +12,7 @@ export default function SignupPage() {
   console.log(step)
   return (
     <div>
-      <Formcontainer>
+      <Formcontainer page="register">
         {step === 1 && <SignupForm1 />}
         {step === 2 && <SignupForm2 />}
         {step === 3 && <SignupForm3 /> }

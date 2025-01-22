@@ -25,19 +25,19 @@ import {
 
 const formSchema = z
   .object({
-    username: z.string({
-      required_error: "username is required",
+    name: z.string({
+      required_error: "Full name is required",
     }),
     email: z.string({
-      required_error: "email is required",
+      required_error: "Email is required",
     }),
     password: z
       .string({
-        required_error: "password is required",
+        required_error: "Password is required",
       })
       .min(8, "Password must not be less than eight characters"),
     passwordConfirm: z.string({
-      required_error: "password is required",
+      required_error: "Confirm password is required",
     }),
   })
   .refine((data) => data.password === data.passwordConfirm, {
@@ -84,10 +84,10 @@ export default function SignupForm1() {
           <FormField
         
             control={form.control}
-            name="username"
+            name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Username</FormLabel>
+                <FormLabel>Full name</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>

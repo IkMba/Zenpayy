@@ -3,6 +3,7 @@ import Features from "@/pageSections/homePage/Features";
 import Help from "@/pageSections/homePage/Help";
 import Hero from "@/pageSections/homePage/Hero";
 import How from "@/pageSections/homePage/How";
+import Partners from "@/pageSections/homePage/Partners";
 import Ready from "@/pageSections/homePage/Ready";
 
 const HomePage = () => {
@@ -11,6 +12,7 @@ const HomePage = () => {
       <Hero />
       <Features />
       <Customer />
+      <Partners />
       <How />
       <Help />
       <Ready />

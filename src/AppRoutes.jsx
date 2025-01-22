@@ -63,7 +63,7 @@ const AppRoutes = () => {
           </DashboardLayout>
         }
       />
-      <Route path="*" element={<Navigate to="/" />} />
+      {/* <Route path="*" element={<Navigate to="/" />} /> */}
     </Routes>
   );
 };
