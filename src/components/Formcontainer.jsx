@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Formcontainer({ children, page }) {
   return (
     <>
-      <div className=" bg-[--blue] min-h-screen py py-16 px-4">
+      <div className=" bg-[--blue] min-h-screen py py-16 px-2 md:px-4">
         <h1 className="text-white font-semibold text-3xl md:text-4xl mb-8  text-center">
           Zenpay
         </h1>

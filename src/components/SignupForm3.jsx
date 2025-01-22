@@ -84,7 +84,7 @@ export default function SignupForm3() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 p-6 bg-gray-50 rounded-lg md:p-10"
+        className="space-y-4 px-4 py-10 md:px-10 bg-gray-50 rounded-lg"
       >
         {isError && <h2>{isError}</h2>}
         <div className="text-center">

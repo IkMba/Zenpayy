@@ -110,7 +110,7 @@ export default function SignupForm2() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 p-6 rounded-lg md:p-10"
+        className="space-y-4 py-6 px-4 md:px-10 rounded-lg md:p-10"
       >
         <div className="text-center">
           <h2 className="text-2xl font-bold text-[--blue]">Signup</h2>
