@@ -1,7 +1,6 @@
 import { Icon, ShieldCheck, Star } from "lucide-react";
 import { targetArrow } from "@lucide/lab";
 import reviewImg1 from "@/assets/profileF3.jpg";
-import reviewImg2 from "@/assets/profileM1.jpg";
 import user1 from "@/assets/user1.jpg";
 import user2 from "@/assets/user2.jpg";
 import user3 from "@/assets/user3.jpg";
