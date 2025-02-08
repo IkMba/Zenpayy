@@ -174,7 +174,9 @@ export const useIsLoggedIn = () => {
     getLoggedIn
   );
 
+
   return {
     isAuthenticated,
   };
 };
+
