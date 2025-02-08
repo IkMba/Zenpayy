@@ -34,7 +34,7 @@ export default function DashboardSavings() {
           text="this is the total savings you have in your account"
           icon={<Shield />}
           amount="0.00"
-          bgColor="bg-[#CCF0FE]"
+          bgColor="bg-[#FFEAF5]"
           // size="lg"
         />
         <DashSavingsCard
@@ -42,7 +42,7 @@ export default function DashboardSavings() {
           text="this is the total savings you have in your account"
           icon={<Shield />}
           amount="0.00"
-          bgColor="bg-[#CCF0FE]"
+          bgColor="bg-[#E7F6FF]"
           // size="lg"
         />
         <DashSavingsCard
@@ -50,7 +50,7 @@ export default function DashboardSavings() {
           text="this is the total savings you have in your account"
           icon={<Shield />}
           amount="0.00"
-          bgColor="bg-[#CCF0FE]"
+          bgColor="bg-[#DCFFEB]"
           // size="lg"
         />
         <DashSavingsCard
@@ -58,7 +58,7 @@ export default function DashboardSavings() {
           text="this is the total savings you have in your account"
           icon={<Shield />}
           amount="0.00"
-          bgColor="bg-[#CCF0FE]"
+          bgColor="bg-[#f5be92]"
           // size="lg"
         />
         <DashSavingsCard
@@ -66,10 +66,11 @@ export default function DashboardSavings() {
           text="this is the total savings you have in your account"
           icon={<Shield />}
           amount="0.00"
-          bgColor="bg-[#CCF0FE]"
+          bgColor="bg-[#EFF4F5]"
           // size="lg"
         />
       </div>
+      
     </div>
   );
 }

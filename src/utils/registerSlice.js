@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   userDetails: {},
   step: 1,
-  user:{}
+  user:{},
+  isAuthenticated:false
 };
 
 const registerSlice = createSlice({
@@ -26,17 +27,21 @@ const registerSlice = createSlice({
     },
     setCurrentUser(state,action){
       state.user = action.payload
+    },
+    setIsAuthenticated(state,action){
+      state.isAuthenticated = action.payload
     }
   },
 });
 
-export const { addDetails, prev, next,setCurrentUser } = registerSlice.actions;
+export const { addDetails, prev, next,setCurrentUser,setIsAuthenticated } = registerSlice.actions;
 
 export default registerSlice.reducer;
 
 export const getRegisterDetails = (state) => state.register.userDetails;
 export const getStep = (state) => state.register.step;
 export const getUser = (state) => state.register.user;
+export const getIsAuthenticated = (state) => state.register.isAuthenticated;
 
 // export const getTotalCartQuantity = (state) =>
 //   state.cart.cart.reduce((sum, item) => sum + item.quantity, 0);

@@ -4,6 +4,10 @@ import "./index.css";
 
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
+import { Toaster } from "@/components/ui/sonner"
+// import { Toaster } from "@/components/ui/toaster"
+
+
 
 import AppRoutes from "./AppRoutes.jsx";
 import store from "./utils/store.js";
@@ -24,6 +28,9 @@ createRoot(document.getElementById("root")!).render(
       <Router>
         <QueryClientProvider client={queryClient}>
         <AppRoutes />
+        <Toaster visibleToasts={1} position="top-right" richColors />
+        {/* <Toaster  /> */}
+
         </QueryClientProvider>
       </Router>
     </Provider>

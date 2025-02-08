@@ -161,7 +161,7 @@ export default function SignupForm2() {
           control={form.control}
           name="dob"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="flex gap-4 items-center">
               <FormLabel>Date of Birth</FormLabel>
               <Popover>
                 <PopoverTrigger asChild>

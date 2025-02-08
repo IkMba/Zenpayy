@@ -9,6 +9,13 @@ import DashboardHome from "./pages/DashboardHome";
 import DashboardInvest from "./pages/DashboardInvest";
 import DashboardLoans from "./pages/DashboardLoans";
 import DashboardSavings from "./pages/DashboardSavings";
+import TransferPage from "./pages/TransferPage";
+import DepositPage from "./pages/DepositPage";
+import InvestPage from "./pages/InvestPage";
+import SavePage from "./pages/SavePage";
+import ContactPage from "./pages/ContactPage";
+import Pay from "./pages/Pay";
+import ProtectedRoute from "./ProtectedRoute";
 
 const AppRoutes = () => {
   return (
@@ -29,8 +36,43 @@ const AppRoutes = () => {
           </Layout>
         }
       />
+      <Route
+        path="/save"
+        element={
+          <Layout>
+            <SavePage />
+          </Layout>
+        }
+      />
+      <Route
+        path="/invest"
+        element={
+          <Layout>
+            <InvestPage />
+          </Layout>
+        }
+      />
+      <Route
+        path="/contact"
+        element={
+          <Layout>
+            <ContactPage />
+          </Layout>
+        }
+      />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<SignupPage />} />
+
+      <Route element={<ProtectedRoute />}>
+        <Route
+          path="/dashboard"
+          element={
+            <DashboardLayout>
+              <DashboardHome />
+            </DashboardLayout>
+          }
+        />
+     
       <Route
         path="/dashboard"
         element={
@@ -42,27 +84,52 @@ const AppRoutes = () => {
       <Route
         path="/dashboard/savings"
         element={
-          <DashboardLayout>
-            <DashboardSavings />
-          </DashboardLayout>
+            <DashboardLayout>
+              <DashboardSavings />
+            </DashboardLayout>
         }
       />
       <Route
         path="/dashboard/invest"
         element={
-          <DashboardLayout>
-            <DashboardInvest />
-          </DashboardLayout>
+            <DashboardLayout>
+              <DashboardInvest />
+            </DashboardLayout>
         }
       />
       <Route
         path="/dashboard/loans"
         element={
-          <DashboardLayout>
-            <DashboardLoans />
-          </DashboardLayout>
+            <DashboardLayout>
+              <DashboardLoans />
+            </DashboardLayout>
         }
       />
+      <Route
+        path="/dashboard/transfer"
+        element={
+            <DashboardLayout>
+              <TransferPage />
+            </DashboardLayout>
+        }
+      />
+      <Route
+        path="/dashboard/deposit"
+        element={
+            <DashboardLayout>
+              <DepositPage />
+            </DashboardLayout>
+        }
+      />
+      <Route
+        path="/dashboard/pay"
+        element={
+            <DashboardLayout>
+              <Pay />
+            </DashboardLayout>
+        }
+      />
+       </Route>
       {/* <Route path="*" element={<Navigate to="/" />} /> */}
     </Routes>
   );

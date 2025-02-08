@@ -4,7 +4,7 @@ import React from "react";
 export default function TransactionCard({ transactionDetails }) {
   const { type, amount, date, description, name } = transactionDetails;
   return (
-    <div className="border-[--blue] border p-4 flex gap-2 text-[--gray2] my-4 md:max-w-[550px]">
+    <div className="border-[--blue] border p-4 flex gap-2 text-[--gray2] my-4 md:w-[550px] w-full">
       {type === "credit" ? (
         <MoveDown color="#062863" />
       ) : (

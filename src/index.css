@@ -10,17 +10,14 @@
     --light-shade: #27414a;
     --torq-blue: #7ed6df;
     --light-blue: #f1f5f9;
-    /* --light-blue: #e8f0fe; */
     --gray: #97a1ac;
     --gray2: #74787e;
     --blue: #062863;
+    --blue2: #2093f0;
 
-    --destructive: red;
 
-    --destructive-foreground: 0 0% 98%;
 
-    /*  
-     --background: 0 0% 100%;
+    --background: 0 0% 100%;
 
     --foreground: 0 0% 3.9%;
 
@@ -68,10 +65,9 @@
 
     --chart-5: 27 87% 67%;
 
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
   .dark {
-
     --background: 0 0% 3.9%;
 
     --foreground: 0 0% 98%;
@@ -118,14 +114,14 @@
 
     --chart-4: 280 65% 60%;
 
-     --chart-5: 340 75% 55%  */
+    --chart-5: 340 75% 55%;
   }
 }
 
 @layer base {
-  /* * {
-     @apply border-border; 
-  } */
+  * {
+    /* @apply border-border;  */
+  }
   body,
   * {
     /* @apply bg-background text-foreground; */
@@ -133,11 +129,21 @@
     box-sizing: border-box;
   }
 }
+
 body,
 * {
   /* @apply bg-background text-foreground; */
   font-family: Sora;
   box-sizing: border-box;
+}
+
+.about-banner {
+  background-image: url(./assets/rev/banner3.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: center;
+  /* color: #f5be92; */
 }
 
 .marquee {
@@ -203,21 +209,60 @@ body,
   animation-play-state: paused;
 }
 
-@keyframes marquee {
-  /* from {
-    transform: translateX(0%);
-  } */
+@keyframes grow {
+  from {
+    opacity: 0;
+    clip-path: inset(100% 100% 0 0);
+  }
   to {
-    transform: translateX(calc(-100% - 20px));
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes moveup {
+  from {
+    opacity: 0;
+    translate: 0 400px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
   }
 }
 
-@keyframes scroll {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(-100%, 0, 0);
-  }
+.feature-card {
+  animation: moveup linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
+}
+.hero-header {
+  animation: grow 2s linear;
+  /* animation-timeline: view(); */
+  /* animation-range: entry 0% cover 40%; */
+}
+.system-header {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+.about-banner {
+  animation: grow 1s linear;
+  /* animation-timeline: view(); */
+  /* animation-range: entry 0% cover 40%; */
+}
+.hero-card,
+.product-card {
+  animation: appear 3s linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }

@@ -107,7 +107,7 @@ export default function SignupForm3() {
                     <SelectValue placeholder="Choose your account type" />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent>
+                <SelectContent className="bg-white">
                   <SelectItem value="Personal account">Personal Account</SelectItem>
                   <SelectItem value="Business account">Business Account</SelectItem>
                   <SelectItem value="Domiciliary account">Domiciliary</SelectItem>
@@ -129,7 +129,7 @@ export default function SignupForm3() {
                     <SelectValue placeholder="How much do you earn anually" />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent>
+                <SelectContent className="bg-white">
                   <SelectItem value="Less than $10,000">
                     {" "}
                     Less than$10,000
@@ -162,7 +162,7 @@ export default function SignupForm3() {
                     <SelectValue placeholder="What's your employment status?" />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent>
+                <SelectContent className="bg-white">
                   <SelectItem value="Employed"> Employed</SelectItem>
                   <SelectItem value="Self-employed"> Self-employed</SelectItem>
                   <SelectItem value="Business-owner">
@@ -187,7 +187,7 @@ export default function SignupForm3() {
                     <SelectValue placeholder="Select your relationship status" />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent>
+                <SelectContent className="bg-white">
                   <SelectItem value="Single"> Single</SelectItem>
                   <SelectItem value="Married"> Married</SelectItem>
                 </SelectContent>

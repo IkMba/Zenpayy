@@ -30,16 +30,16 @@ export function MobileNav() {
         </SheetHeader>
         <div className="flex flex-col mt-16 gap-8 text-xl hover:*:text-[--blue]">
         <Link to="/about">About</Link>
-        <Link to="/products">Products</Link>
-        <Link to="/resources">Resources</Link>
-        <Link to="/support">Support</Link>
+        <Link to="/save">Save</Link>
+        <Link to="/invest">Invest</Link>
         <Link to="/contact">Contact</Link>
+        <Link to="/login">Login</Link>
         <Button
           asChild
           variant="secondary"
          className="w-fit text-xl bg-[--dark-shade] text-white"
         >
-          <Link to="/login">Login</Link>
+          <Link to="/register">Get Started</Link>
           </Button>
         </div>
         {/* <SheetFooter>
