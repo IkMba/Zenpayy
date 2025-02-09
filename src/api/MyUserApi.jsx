@@ -88,7 +88,7 @@ export const useLogin = () => {
   } = useMutation({
     mutationFn: createUserRequest,
     onSuccess: (data) => {
-      toast.success("User created successfully");
+      toast.success("Login successful");
       navigate("/dashboard");
 
       dispatch(setIsAuthenticated(true));
