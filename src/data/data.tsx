@@ -1,5 +1,4 @@
-import { CopyCheck, Icon, ShieldCheck, Sparkles } from "lucide-react";
-import { targetArrow } from "@lucide/lab";
+import { CopyCheck, ShieldCheck, Sparkles } from "lucide-react";
 import reviewImg1 from "@/assets/profileF3.jpg";
 import user1 from "@/assets/user1.jpg";
 import user2 from "@/assets/user2.jpg";
