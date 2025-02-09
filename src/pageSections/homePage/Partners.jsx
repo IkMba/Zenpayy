@@ -18,13 +18,13 @@ export default function Partners() {
       </h3>
       <div className="relative w-[90%] max-w-[1536px] h-[100px] overflow-hidden mx-auto marquee ">
         <img src={stripe} alt="" className="marq-item marq-1" />
-        <img src={salesforce} alt="" className=" marq-item marq-6" />
-        <img src={coinbase} alt="" className=" marq-item marq-2" />
-        <img src={amazon} alt="" className=" marq-item marq-5" />
-        <img src={venmo} alt="" className=" marq-item marq-3" />
-        <img src={paypal} alt="" className=" marq-item marq-7" />
-        <img src={microsoft} alt="" className=" marq-item marq-8" />
-        <img src={fastCompany} alt="" className=" marq-item marq-4" />
+        <img src={salesforce} alt="" className=" marq-item marq-2" />
+        <img src={coinbase} alt="" className=" marq-item marq-3" />
+        <img src={amazon} alt="" className=" marq-item marq-4" />
+        <img src={venmo} alt="" className=" marq-item marq-5" />
+        <img src={paypal} alt="" className=" marq-item marq-6" />
+        <img src={microsoft} alt="" className=" marq-item marq-7" />
+        <img src={fastCompany} alt="" className=" marq-item marq-8" />
        
         {/* <img src={stripe} alt="" className="w-[200px] " />
         <img src={pyments} alt="" className="w-[200px] marq-item" />

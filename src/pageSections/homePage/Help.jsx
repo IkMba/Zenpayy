@@ -41,8 +41,7 @@ export default function Help() {
             <AccordionItem value="item-1">
               <AccordionTrigger>How Secure is my Money?</AccordionTrigger>
               <AccordionContent>
-                The funds in your Account are warehoused and managed by PV
-                Capital Limited - RC No. 1760152 (“PV Capital”). All its
+                All our
                 operations are in compliance with applicable regulations. In
                 addition, we enforce bank-grade security levels and provide you
                 with the option to set up two-factor authentication for key

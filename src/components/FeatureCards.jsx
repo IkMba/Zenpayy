@@ -12,7 +12,6 @@ import { Icon } from "lucide-react";
 // };
 
 const FeatureCards = ({ features, icon }) => {
-  const Lucid = icons[Star];
   return (
     <div className="hero-card bg-[--light-shade] max-w-[350px] px-6 py-6 rounded-xl text-left flex  gap-4 flex-col border-[--torq-blue] border ">
       {/* <Icon iconNode={Star} /> */}

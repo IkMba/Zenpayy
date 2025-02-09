@@ -17,8 +17,8 @@ import { Link } from "react-router-dom";
 
 export function MobileNav() {
   return (
-    <Sheet >
-      <SheetTrigger asChild className="bg-[--dark-shade] text-white">
+    <Sheet className='bg-[--dark-shade]' >
+      <SheetTrigger asChild className="bg-inherit text-[--torq-blue]">
         <Menu  size={32}/>
       </SheetTrigger>
       <SheetContent className=" bg-[--light-blue]">

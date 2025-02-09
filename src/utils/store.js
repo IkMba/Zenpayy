@@ -1,10 +1,26 @@
 import { configureStore } from "@reduxjs/toolkit";
 import registerSlice from "@/utils/registerSlice";
+import storage from "redux-persist/lib/storage";
+import persistReducer from "redux-persist/es/persistReducer";
+import persistStore from "redux-persist/es/persistStore";
 
-const store = configureStore({
+const persistConfig = {
+  key: "root",
+  storage,
+};
+const persistedReducer = persistReducer(persistConfig, registerSlice);
+
+
+export const store = configureStore({
   reducer: {
-    register: registerSlice,
+    register: persistedReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
-export default store;
+export const persistor = persistStore(store);
+
+// export default store;

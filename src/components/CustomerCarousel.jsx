@@ -16,7 +16,7 @@ export function CustomerCarousel() {
   const plugin = React.useRef(
     Autoplay({
       delay: 2500,
-      // stopOnInteraction: true
+      stopOnInteraction: false
       
     })
   );

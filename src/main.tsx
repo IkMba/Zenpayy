@@ -10,7 +10,9 @@ import { Toaster } from "@/components/ui/sonner"
 
 
 import AppRoutes from "./AppRoutes.jsx";
-import store from "./utils/store.js";
+import  { persistor,store } from "./utils/store.js";
+import { PersistGate } from "redux-persist/integration/react";
+// import { PersistGate } from "redux-persist/";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 
@@ -25,6 +27,7 @@ const queryClient = new QueryClient({
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
       <Router>
         <QueryClientProvider client={queryClient}>
         <AppRoutes />
@@ -33,6 +36,8 @@ createRoot(document.getElementById("root")!).render(
 
         </QueryClientProvider>
       </Router>
+      </PersistGate>
+
     </Provider>
   </StrictMode>
 );

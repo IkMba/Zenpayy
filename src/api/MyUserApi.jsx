@@ -1,10 +1,10 @@
-import { setCurrentUser,setIsAuthenticated } from "@/utils/registerSlice";
+import { setCurrentUser, setIsAuthenticated } from "@/utils/registerSlice";
 import { useMutation, useQuery } from "react-query";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
-const BASE_URL = 'https://artemis-backend-6rvg.onrender.com';
+const BASE_URL = "https://artemis-backend-6rvg.onrender.com";
 
 export const useCreateUser = () => {
   const navigate = useNavigate();
@@ -22,7 +22,6 @@ export const useCreateUser = () => {
     console.log(user);
     const res = await response.json();
     const currentUser = res.data.user;
-
 
     if (!response.ok) {
       // console.log(res)
@@ -45,10 +44,7 @@ export const useCreateUser = () => {
       toast.success("User created successfully");
       navigate("/dashboard");
     },
-    onError: (err) => 
-      toast.error("Error creating user")
-
-    
+    onError: (err) => toast.error("Error creating user"),
   });
 
   return {
@@ -92,8 +88,12 @@ export const useLogin = () => {
   } = useMutation({
     mutationFn: createUserRequest,
     onSuccess: (data) => {
+      toast.success("User created successfully");
+      navigate("/dashboard");
+
       dispatch(setIsAuthenticated(true));
       dispatch(setCurrentUser(data));
+
       navigate("/dashboard");
     },
     onError: (err) => console.log(err.message),
@@ -148,16 +148,13 @@ export const getUser = () => {
 };
 export const useIsLoggedIn = () => {
   const getLoggedIn = async () => {
-    const response = await fetch(
-      `http://127.0.0.1:4000/api/v1/users`,
-      {
-        method: "GET",
-        headers: {
-          //   Authorization:`Bearer ${}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch(`http://127.0.0.1:4000/api/v1/users`, {
+      method: "GET",
+      headers: {
+        //   Authorization:`Bearer ${}`,
+        "Content-Type": "application/json",
+      },
+    });
 
     // const res = await response.json();
     // const isAuthenticated = res.data.isAuthenticated;
@@ -174,9 +171,7 @@ export const useIsLoggedIn = () => {
     getLoggedIn
   );
 
-
   return {
     isAuthenticated,
   };
 };
-
