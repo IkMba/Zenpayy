@@ -4,13 +4,13 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
-const BASE_URL = import.meta.env.API_BASE_URL;
+const BASE_URL = 'https://artemis-backend-6rvg.onrender.com';
 
 export const useCreateUser = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const createUserRequest = async (user) => {
-    const response = await fetch(`http://localhost:4000/api/v1/users/signup`, {
+    const response = await fetch(`${BASE_URL}/api/v1/users/signup`, {
       method: "POST",
       headers: {
         //   Authorization:`Bearer ${}`,
@@ -63,7 +63,7 @@ export const useLogin = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const createUserRequest = async (user) => {
-    const response = await fetch(`http://localhost:4000/api/v1/users/login`, {
+    const response = await fetch(`${BASE_URL}/api/v1/users/login`, {
       method: "POST",
       // credentials:'include',
       headers: {
@@ -109,7 +109,7 @@ export const useLogin = () => {
 
 export const getUser = () => {
   const fetchUser = async (user) => {
-    const response = await fetch(`http://localhost:4000/api/v1/users/login`, {
+    const response = await fetch(`${BASE_URL}/v1/users/login`, {
       method: "POST",
       headers: {
         //   Authorization:`Bearer ${}`,
