@@ -28,7 +28,7 @@ export function MobileNav() {
             Make changes to your profile here. Click save when you're done.
           </SheetDescription> */}
         </SheetHeader>
-        <div className="flex flex-col mt-16 gap-8 text-xl hover:*:text-[--blue]">
+        <div className="flex flex-col mt-16 gap-8 text-xl hover:*:text-[--blue] ">
         <Link to="/about">About</Link>
         <Link to="/save">Save</Link>
         <Link to="/invest">Invest</Link>
@@ -37,7 +37,7 @@ export function MobileNav() {
         <Button
           asChild
           variant="secondary"
-         className="w-fit text-xl bg-[--dark-shade] text-white"
+         className="w-fit text-xl bg-[--dark-shade] text-white hover:!text-white"
         >
           <Link to="/register">Get Started</Link>
           </Button>

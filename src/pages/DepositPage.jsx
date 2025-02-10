@@ -35,7 +35,7 @@ export default function DepositPage() {
     // </div>
     <div className=''>
     <div className='md:flex gap-16 border border-[--gray2] my-8 mx-4 md:my-16 py-8 md:pl-2 md:pr-12 md:w-fit '>
-      <div className='md:mt-10 max-w-[400px] flex-1'>
+      <div className='md:mt-10 md:max-w-[400px] flex-1'>
     
     <DepositForm setPaymentMethod={setPaymentMethod} paymentMethod={paymentMethod}/>
     </div>

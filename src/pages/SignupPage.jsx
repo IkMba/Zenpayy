@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from "react-redux";
 export default function SignupPage() {
   const step = useSelector(getStep);
   const dispatch = useDispatch();
-  console.log(step)
   return (
     <div>
       <Formcontainer page="register">

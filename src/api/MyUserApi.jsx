@@ -18,6 +18,14 @@ export const useCreateUser = () => {
       },
       body: JSON.stringify(user),
     });
+    // const response = await fetch(`http://127.0.0.1:4000/api/v1/users/signup`, {
+    //   method: "POST",
+    //   headers: {
+    //     //   Authorization:`Bearer ${}`,
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(user),
+    // });
 
     console.log(user);
     const res = await response.json();

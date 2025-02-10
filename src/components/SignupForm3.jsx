@@ -27,6 +27,7 @@ import { Button } from "@/components/ui/button";
 import { useDispatch, useSelector } from "react-redux";
 import { addDetails, getRegisterDetails, prev } from "@/utils/registerSlice";
 import { useCreateUser } from "@/api/MyUserApi";
+import { Loader2 } from "lucide-react";
 
 const formSchema = z
   .object({
@@ -207,7 +208,13 @@ export default function SignupForm3() {
             >
               Go back
             </Button>
-            <Button type="submit" className="bg-[--blue]  text-white ">Submit</Button>
+            {
+              isLoading ?  <Button disabled className="bg-[--blue]  text-white">
+              <Loader2 className="animate-spin" />
+              Please wait
+            </Button> : <Button type="submit" className="bg-[--blue]  text-white ">Submit</Button>
+            }
+            
           </div>
         </div>
       </form>

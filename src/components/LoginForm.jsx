@@ -23,6 +23,7 @@ import {
   prev,
 } from "@/utils/registerSlice";
 import { useLogin } from "@/api/MyUserApi";
+import { Loader2 } from "lucide-react";
 
 const formSchema = z.object({
   email: z.string({
@@ -97,7 +98,13 @@ export default function SignupForm1() {
           )}
         />
         <div className=" pt-4">
-          <Button className="bg-[--blue] text-white w-full">Login</Button>
+         
+          {
+              isLoading ?  <Button disabled className="bg-[--blue] text-white w-full">
+              <Loader2 className="animate-spin" />
+              Please wait
+            </Button> :  <Button className="bg-[--blue] text-white w-full">Login</Button>
+            }
         </div>
       </form>
     </Form>

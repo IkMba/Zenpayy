@@ -31,7 +31,7 @@ export default function DashboardHome() {
             </div>
             <User className='' color='#062863' fill='#062863' size={32} />
         </div>
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center justify-between mb-4'>
           <DashBalance />
         <div className='flex gap-4 justify-end'>
           <Link to='deposit' className='px-4 py-2 md:px-10 md:py-4 bg-[#E743A9] rounded-lg text-white'>Deposit</Link>
