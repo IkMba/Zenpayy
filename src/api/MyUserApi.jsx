@@ -1,4 +1,4 @@
-import { setCurrentUser, setIsAuthenticated } from "@/utils/registerSlice";
+import { resetStep, resetUserDetails, setCurrentUser, setIsAuthenticated } from "@/utils/registerSlice";
 import { useMutation, useQuery } from "react-query";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -48,11 +48,16 @@ export const useCreateUser = () => {
     onSuccess: (data) => {
       dispatch(setIsAuthenticated(true));
       dispatch(setCurrentUser(data));
+      dispatch(resetStep())
+      dispatch(resetUserDetails())
 
       toast.success("User created successfully");
       navigate("/dashboard");
     },
-    onError: (err) => toast.error("Error creating user"),
+    onError: (err) => {
+      toast.error("Error creating user"),
+      dispatch(resetStep())
+    }
   });
 
   return {
@@ -154,32 +159,32 @@ export const getUser = () => {
     isSuccess,
   };
 };
-export const useIsLoggedIn = () => {
-  const getLoggedIn = async () => {
-    const response = await fetch(`http://127.0.0.1:4000/api/v1/users`, {
-      method: "GET",
-      headers: {
-        //   Authorization:`Bearer ${}`,
-        "Content-Type": "application/json",
-      },
-    });
+// export const useIsLoggedIn = () => {
+//   const getLoggedIn = async () => {
+//     const response = await fetch(`http://127.0.0.1:4000/api/v1/users`, {
+//       method: "GET",
+//       headers: {
+//         //   Authorization:`Bearer ${}`,
+//         "Content-Type": "application/json",
+//       },
+//     });
 
-    // const res = await response.json();
-    // const isAuthenticated = res.data.isAuthenticated;
-    // console.log(isAuthenticated);
+//     // const res = await response.json();
+//     // const isAuthenticated = res.data.isAuthenticated;
+//     // console.log(isAuthenticated);
 
-    // if (!response.ok) {
-    //   throw new Error(res.error);
-    // }
+//     // if (!response.ok) {
+//     //   throw new Error(res.error);
+//     // }
 
-    return response.json();
-  };
-  const { data: isAuthenticated, isLoading } = useQuery(
-    "getIsLoggedIn",
-    getLoggedIn
-  );
+//     return response.json();
+//   };
+//   const { data: isAuthenticated, isLoading } = useQuery(
+//     "getIsLoggedIn",
+//     getLoggedIn
+//   );
 
-  return {
-    isAuthenticated,
-  };
-};
+//   return {
+//     isAuthenticated,
+//   };
+// };

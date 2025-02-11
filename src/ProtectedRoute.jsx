@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useIsLoggedIn } from "./api/MyUserApi";
 import { Navigate, Outlet } from "react-router-dom";
 import { get } from "react-hook-form";
 import { getIsAuthenticated } from "./utils/registerSlice";

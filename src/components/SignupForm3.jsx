@@ -72,6 +72,7 @@ export default function SignupForm3() {
   //     form.reset(currentUser);
   //   }, [currentUser, form]);
 
+  console.log(userDetails)
   const onSubmit = async (values) => {
     await dispatch(addDetails(values));
     const regDetails = userDetails;

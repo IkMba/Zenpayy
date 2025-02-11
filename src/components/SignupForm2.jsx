@@ -43,7 +43,14 @@ import {
   getRegisterDetails,
   next,
   prev,
+  resetStep,
+  resetUserDetails,
 } from "@/utils/registerSlice";
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import dayjs from "dayjs";
 
 const formSchema = z
   .object({
@@ -64,7 +71,7 @@ const formSchema = z
     country: z.string({
       required_error: "Country is required",
     }),
-    dob: z.date({
+    dob: z.coerce.date({
       required_error: "Date of birth is required",
     }),
     gender: z.string({
@@ -79,6 +86,10 @@ const formSchema = z
 export default function SignupForm2() {
   const userDetails = useSelector(getRegisterDetails);
   const dispatch = useDispatch();
+  const [value, setValue] = useState();
+  const [date, setDate] = useState(dayjs());
+
+
   console.log("rendered");
 
   const [countries, setCountries] = useState([]);
@@ -98,11 +109,24 @@ export default function SignupForm2() {
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: userDetails,
+    values:{
+      ...userDetails,
+      dob:new Date(date)
+    }
   });
 
+  // dispatch(resetUserDetails())
+  // dispatch(resetStep())
+  // console.log(form.getValues().dob.$d)
+  // form.getValues().dob = date.$d
+  console.log(form.getValues().dob)
+  // console.log(date)
   function onSubmit(values) {
+    // values = {...values,dob:date.$d.split(' ')[1]}
     console.log(values);
+
     dispatch(addDetails(values));
+
     dispatch(next());
   }
 
@@ -157,7 +181,30 @@ export default function SignupForm2() {
             </FormItem>
           )}
         />
-        <FormField
+        <FormField control={form.control}
+          name="dob" render={({ field }) => (
+            <FormItem className="flex gap-4 items-center">
+              <FormLabel>Date of Birth</FormLabel>
+              <FormControl >
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DemoContainer components={['DatePicker']} >
+        <DatePicker value={date} onChange={(newValue) => {
+          setDate(newValue)
+        } 
+        } className="bg-[#F1F5F9] border-0 outline-0"
+        />
+         {/* value={date}  onChange={(newValue) => {
+          setDate(newValue)
+        } 
+        } */}
+      </DemoContainer>
+    </LocalizationProvider>
+    </FormControl>
+    <FormMessage />
+    </FormItem>
+          )}
+    />
+        {/* <FormField
           control={form.control}
           name="dob"
           render={({ field }) => (
@@ -195,9 +242,9 @@ export default function SignupForm2() {
                 </PopoverContent>
               </Popover>
               <FormMessage />
-            </FormItem>
-          )}
-        />
+            </FormItem> */}
+          {/* )}
+        /> */}
         <FormField
           control={form.control}
           name="address"

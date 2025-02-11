@@ -15,6 +15,9 @@ const registerSlice = createSlice({
     //   state.userDetails.push(action.payload);
     state.userDetails = {...state.userDetails,...action.payload}
     },
+    resetUserDetails(state){
+      state.userDetails = {}
+    },
     prev(state) {
       if (state.step > 1) {
         state.step--;
@@ -25,6 +28,9 @@ const registerSlice = createSlice({
         state.step++;
       }
     },
+    resetStep(state){
+      state.step = 1
+    },
     setCurrentUser(state,action){
       state.user = action.payload
     },
@@ -34,7 +40,7 @@ const registerSlice = createSlice({
   },
 });
 
-export const { addDetails, prev, next,setCurrentUser,setIsAuthenticated } = registerSlice.actions;
+export const { addDetails,resetUserDetails, prev, next,resetStep,setCurrentUser,setIsAuthenticated } = registerSlice.actions;
 
 export default registerSlice.reducer;
 

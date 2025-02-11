@@ -9,6 +9,7 @@ import { Toaster } from "@/components/ui/sonner";
 import AppRoutes from "./AppRoutes.jsx";
 import { persistor, store } from "./utils/store.js";
 import { PersistGate } from "redux-persist/integration/react";
+
 // import { PersistGate } from "redux-persist/";
 import { QueryClient, QueryClientProvider } from "react-query";
 

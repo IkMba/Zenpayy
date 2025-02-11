@@ -1,4 +1,4 @@
-import { useIsLoggedIn, useLogin } from "@/api/MyUserApi";
+import { useLogin } from "@/api/MyUserApi";
 import Customer from "@/pageSections/homePage/Customer";
 import Features from "@/pageSections/homePage/Features";
 import Help from "@/pageSections/homePage/Help";
