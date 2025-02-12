@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -32,6 +32,7 @@ import {
   prev,
 } from "@/utils/registerSlice";
 import { toast } from "sonner";
+import { Loader2 } from "lucide-react";
  
 
 
@@ -52,6 +53,7 @@ const formSchema = z.object({
 export default function TransferForm() {
   const userDetails = useSelector(getRegisterDetails);
   const dispatch = useDispatch();
+    const [ isLoading,setIsLoading] = useState(false)
   // const { toast } = useToast();
 
   const form = useForm({
@@ -67,23 +69,13 @@ export default function TransferForm() {
 
   // console.log(userDetails)
   function onSubmit(values) {
-    console.log(values);
-    dispatch(addDetails(values));
-    dispatch(next());
-
-    toast.error("Error!! Transfer unsuccessful Please contact admin if this issue continues.");
-
-    // toast({
-    //   variant: "destructive",
-    //   className: cn(
-    //     'top-0 right-0 flex fixed md:max-w-[420px] md:top-4 md:right-4 text-red bg-red'
-    //   ),
-    //         title: "Uh oh! Something went wrong.",
-    //   description: "There was a problem with your request.",
-    //   action: <ToastAction altText="Try again">Try again</ToastAction>,
-    // })
-    console.log('submitted')
-  }
+    setIsLoading(true)
+    
+    setTimeout(() => {
+      setIsLoading(false)
+      toast.error("Error!! Please contact admin if this issue continues.");
+    },3000)
+      }
 
   return (
     <Form {...form}>
@@ -173,10 +165,18 @@ export default function TransferForm() {
             </FormItem>
           )}
         />
-        {/* </div> */}
-        <div className="flex justify-end pt-4">
+                <div className="flex justify-end pt-4">
+
+          {
+              isLoading ?  <Button disabled className="bg-[--blue]  text-white ">
+              <Loader2 className="animate-spin" />
+              Please wait
+            </Button> : <Button type="submit" className="bg-[--blue]  text-white "  >Transfer</Button>
+            }
+             </div>
+        {/* <div className="flex justify-end pt-4">
           <Button className="bg-[--blue] text-white" type="submit">Transfer</Button>
-        </div>
+        </div> */}
       </form>
     </Form>
   );

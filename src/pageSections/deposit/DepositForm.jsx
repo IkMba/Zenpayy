@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -32,6 +32,8 @@ import {
   prev,
 } from "@/utils/registerSlice";
 import { Textarea } from "@/components/ui/textarea";
+import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   amount: z.string({
@@ -45,16 +47,21 @@ const formSchema = z.object({
 export default function DepositForm({ setPaymentMethod }) {
   const userDetails = useSelector(getRegisterDetails);
   const dispatch = useDispatch();
+  const [ isLoading,setIsLoading] = useState(false)
 
   const form = useForm({
     resolver: zodResolver(formSchema),
   });
 
   function onSubmit(values) {
-    console.log(values);
-    dispatch(addDetails(values));
-    dispatch(next());
+setIsLoading(true)
+
+setTimeout(() => {
+  setIsLoading(false)
+  toast.error('Please scan the code below to deposit money into your account.')
+},3000)
   }
+
 
   return (
     <Form {...form}>
@@ -95,7 +102,7 @@ export default function DepositForm({ setPaymentMethod }) {
               >
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Bitcoin">Bitcoin </SelectValue>
+                    <SelectValue placeholder="USDT">USDT </SelectValue>
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent className="bg-white">
@@ -108,10 +115,18 @@ export default function DepositForm({ setPaymentMethod }) {
             </FormItem>
           )}
         />
+        
+            {
+              isLoading ?  <Button disabled className="bg-[--blue]  text-white w-full">
+              <Loader2 className="animate-spin" />
+              Please wait
+            </Button> : <Button type="submit" className="bg-[--blue]  text-white w-full"  >Continue</Button>
+            }
+        
 
-        <div className="flex justify-end pt-4">
+        {/* <div className="flex justify-end pt-4">
           <Button className="bg-[--blue] text-white w-full">Continue</Button>
-        </div>
+        </div> */}
       </form>
     </Form>
   );

@@ -43,8 +43,7 @@ export default function Systems() {
             Life, meet savings
           </h2>
           <p className="text-[--gray2] text-lg">
-            Grow your money with up to 5% AER/Gross (variable) interest rate on
-            savings, paid every day.
+            Grow your money with zenpay savings and earn interests on your money. Make your money work for you!.Choose to cash out your interests anytime.
           </p>
         </div>
         <div className="flex-1">

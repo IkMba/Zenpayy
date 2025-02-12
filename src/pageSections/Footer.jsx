@@ -9,10 +9,7 @@ export default function Footer() {
           Zenpay
         </h2>
         <h4>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, omnis
-          repellendus aperiam quae quod at error, voluptatem nobis veritatis
-          atque iure magni odit dolore delectus doloremque saepe molestiae eius
-          eos.
+          Reach your financial goals with super secure and efficient systems. Build the life you want with zenpay.
         </h4>
       </div>
       <div className="flex flex-col md:flex-row flex-wrap gap-6 md:gap-12 md:items-center mt-6 md:mt-0">

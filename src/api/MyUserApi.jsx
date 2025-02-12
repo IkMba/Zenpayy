@@ -76,7 +76,7 @@ export const useLogin = () => {
       method: "POST",
       // credentials:'include',
       headers: {
-        //   Authorization:`Bearer ${}`,
+          // Authorization:`Bearer ${}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
@@ -109,7 +109,8 @@ export const useLogin = () => {
 
       navigate("/dashboard");
     },
-    onError: (err) => console.log(err.message),
+    onError: (err) =>       toast.error("Invalid username or password"),
+    
   });
 
   return {
