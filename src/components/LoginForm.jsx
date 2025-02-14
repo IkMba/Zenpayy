@@ -51,9 +51,7 @@ export default function SignupForm1() {
   //     form.reset(currentUser);
   //   }, [currentUser, form]);
 
-  // console.log(userDetails)
   async function onSubmit(values) {
-    console.log(values);
 
     await loginUser(values);
   }

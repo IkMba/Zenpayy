@@ -71,15 +71,11 @@ export default function SignupForm3() {
   //   useEffect(() => {
   //     form.reset(currentUser);
   //   }, [currentUser, form]);
-
-  console.log(userDetails);
   const onSubmit = async (values) => {
     await dispatch(addDetails(values));
     const regDetails = userDetails;
-    console.log(regDetails);
 
     await createUser({ ...regDetails, ...values });
-    console.log("submitted");
   };
 
   return (

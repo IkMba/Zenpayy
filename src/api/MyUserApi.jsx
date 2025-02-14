@@ -32,12 +32,10 @@ export const useCreateUser = () => {
     //   body: JSON.stringify(user),
     // });
 
-    console.log(user);
     const res = await response.json();
     const currentUser = res.data.user;
 
     if (!response.ok) {
-      // console.log(res)
       throw new Error(res.error);
     }
 
@@ -90,7 +88,6 @@ export const useLogin = () => {
     const currentUser = res.data.user;
 
     if (!response.ok) {
-      // console.log(res)
       throw new Error(res.error);
     }
 
@@ -135,11 +132,9 @@ export const getUser = () => {
       body: JSON.stringify(user),
     });
 
-    console.log(user);
     const res = await response.json();
 
     if (!response.ok) {
-      // console.log(res)
       throw new Error(res.error);
     }
   };
@@ -182,10 +177,8 @@ export const useGetTransactions = () => {
 
     const res = await response.json();
     const transactions = res.data.data;
-    console.log(transactions);
 
     if (!response.ok) {
-      // console.log(res)
       // throw new Error(res.error);
       console.log("error");
     }
@@ -210,32 +203,4 @@ export const useGetTransactions = () => {
     isError,
     isSuccess,
   };
-}; // export const useIsLoggedIn = () => {
-//   const getLoggedIn = async () => {
-//     const response = await fetch(`http://127.0.0.1:4000/api/v1/users`, {
-//       method: "GET",
-//       headers: {
-//         //   Authorization:`Bearer ${}`,
-//         "Content-Type": "application/json",
-//       },
-//     });
-
-//     // const res = await response.json();
-//     // const isAuthenticated = res.data.isAuthenticated;
-//     // console.log(isAuthenticated);
-
-//     // if (!response.ok) {
-//     //   throw new Error(res.error);
-//     // }
-
-//     return response.json();
-//   };
-//   const { data: isAuthenticated, isLoading } = useQuery(
-//     "getIsLoggedIn",
-//     getLoggedIn
-//   );
-
-//   return {
-//     isAuthenticated,
-//   };
-// };
+}; 

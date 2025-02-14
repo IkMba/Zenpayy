@@ -89,9 +89,6 @@ export default function SignupForm2() {
   const [value, setValue] = useState();
   const [date, setDate] = useState(dayjs());
 
-
-  console.log("rendered");
-
   const [countries, setCountries] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState({});
 
@@ -115,16 +112,7 @@ export default function SignupForm2() {
     }
   });
 
-  // dispatch(resetUserDetails())
-  // dispatch(resetStep())
-  // console.log(form.getValues().dob.$d)
-  // form.getValues().dob = date.$d
-  console.log(form.getValues().dob)
-  // console.log(date)
   function onSubmit(values) {
-    // values = {...values,dob:date.$d.split(' ')[1]}
-    console.log(values);
-
     dispatch(addDetails(values));
 
     dispatch(next());

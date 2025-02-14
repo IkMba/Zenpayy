@@ -67,7 +67,6 @@ export default function TransferForm() {
   //     form.reset(currentUser);
   //   }, [currentUser, form]);
 
-  // console.log(userDetails)
   function onSubmit(values) {
     setIsLoading(true)
     
