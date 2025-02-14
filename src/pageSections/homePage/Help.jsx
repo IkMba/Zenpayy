@@ -45,7 +45,7 @@ export default function Help() {
                 regulations. In addition, we enforce bank-grade security levels
                 and provide you with the option to set up two-factor
                 authentication for key transactions, as an extra layer of
-                protection, over your PiggyVest Account.
+                protection, over your Trustbanky Account.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -81,8 +81,9 @@ export default function Help() {
                 Does Trustbanky have an office?
               </AccordionTrigger>
               <AccordionContent>
-                Yes! We are located at Tesmot House Zurich Switzerland You can
-                also reach us on our email: Email: contact@Trustbanky.com
+                Yes! We are located atWhitworth Street West, Deansgate,
+                Manchester, U.K You can also reach us on our email: Email:
+                contact@Trustbanky.com
               </AccordionContent>
             </AccordionItem>
           </Accordion>

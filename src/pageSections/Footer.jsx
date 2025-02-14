@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <div className="py-8 px-12 md:px-24 md:py-24 lg:flex gap-36">
+    <div className="py-8 px-6 md:px-24 md:py-24 lg:flex gap-36">
       <div className="w-80 text-[--gray] text-sm ">
         <h2 className="text-2xl font-semibold my-4 text-[--dark-shade]">
           Trustbanky

@@ -59,7 +59,7 @@ const formSchema = z
 export default function SignupForm3() {
   const userDetails = useSelector(getRegisterDetails);
   const dispatch = useDispatch();
-  const {createUser,isLoading,isError} = useCreateUser()
+  const { createUser, isLoading, isError } = useCreateUser();
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -72,13 +72,13 @@ export default function SignupForm3() {
   //     form.reset(currentUser);
   //   }, [currentUser, form]);
 
-  console.log(userDetails)
+  console.log(userDetails);
   const onSubmit = async (values) => {
     await dispatch(addDetails(values));
     const regDetails = userDetails;
     console.log(regDetails);
 
-   await createUser({...regDetails,...values})
+    await createUser({ ...regDetails, ...values });
     console.log("submitted");
   };
 
@@ -110,9 +110,15 @@ export default function SignupForm3() {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent className="bg-white">
-                  <SelectItem value="Personal account">Personal Account</SelectItem>
-                  <SelectItem value="Business account">Business Account</SelectItem>
-                  <SelectItem value="Domiciliary account">Domiciliary</SelectItem>
+                  <SelectItem value="Personal account">
+                    Personal Account
+                  </SelectItem>
+                  <SelectItem value="Business account">
+                    Business Account
+                  </SelectItem>
+                  <SelectItem value="Domiciliary account">
+                    Domiciliary
+                  </SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
@@ -167,7 +173,7 @@ export default function SignupForm3() {
                 <SelectContent className="bg-white">
                   <SelectItem value="Employed"> Employed</SelectItem>
                   <SelectItem value="Self-employed"> Self-employed</SelectItem>
-                  <SelectItem value="Business-owner">
+                  <SelectItem value="Business owner">
                     {" "}
                     Business Owner
                   </SelectItem>
@@ -209,13 +215,16 @@ export default function SignupForm3() {
             >
               Go back
             </Button>
-            {
-              isLoading ?  <Button disabled className="bg-[--blue]  text-white">
-              <Loader2 className="animate-spin" />
-              Please wait
-            </Button> : <Button type="submit" className="bg-[--blue]  text-white ">Submit</Button>
-            }
-            
+            {isLoading ? (
+              <Button disabled className="bg-[--blue]  text-white">
+                <Loader2 className="animate-spin" />
+                Please wait
+              </Button>
+            ) : (
+              <Button type="submit" className="bg-[--blue]  text-white ">
+                Submit
+              </Button>
+            )}
           </div>
         </div>
       </form>

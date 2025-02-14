@@ -1,8 +1,13 @@
 import DashCards from "@/components/dashboard/DashCards";
 import DashSavingsCard from "@/components/dashboard/DashSavingsCard";
 import { Shield, User } from "lucide-react";
+import { useSelector } from "react-redux";
+import { getUser } from "@/utils/registerSlice";
+import { formatNumber } from "@/components/dashboard/TransactionCard";
 
 export default function DashboardInvest() {
+  const currentUser = useSelector(getUser);
+
   return (
     <div className="py-12 px-4 w-screen md:w-full ">
       <div className="flex justify-between items-center mb-8">
@@ -17,7 +22,7 @@ export default function DashboardInvest() {
       <div>
         <div className="border border-[--gray2] px-4 py-6">
           <h3 className="text-[--gray] text-sm">Total Balance</h3>
-          <h4 className="text-[--blue] text-3xl">$0.00</h4>
+          <h4 className="text-[--blue] text-3xl">${formatNumber(currentUser.balance)}</h4>
         </div>
       </div>
       <div className="flex gap-4 flex-wrap my-8">

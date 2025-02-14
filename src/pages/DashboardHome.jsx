@@ -1,7 +1,7 @@
 import DashActions from "@/components/dashboard/DashActions";
 import DashBanner from "@/components/dashboard/DashBanner";
 import DashCards from "@/components/dashboard/DashCards";
-import TransactionCard from "@/components/dashboard/TransactionCard";
+import TransactionCard, { formatNumber } from "@/components/dashboard/TransactionCard";
 import TransactionTable from "@/components/dashboard/TransactionTable";
 import { getUser } from "@/utils/registerSlice";
 import {
@@ -43,8 +43,6 @@ export default function DashboardHome() {
     fetch();
   }, []);
 
-  console.log(transactions);
-  console.log(currentUser._id);
   return (
     <div className="py-12 px-4 w-screen md:w-full ">
       <div className="flex justify-between items-center mb-8">
@@ -74,7 +72,7 @@ export default function DashboardHome() {
       <div className="flex gap-4 py-2 overflow-x-scroll w-full md:w-full md:overflow-hidden">
         <DashCards
           title="Total Savings"
-          amount="$0.00"
+          amount={`$${formatNumber(currentUser.balance)}`}
           bgColor="bg-[--blue]"
           size="md"
           icon={<Shield />}

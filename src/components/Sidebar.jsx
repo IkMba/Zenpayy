@@ -29,7 +29,7 @@ export default function Sidebar() {
     <div className=" hidden md:block bg-[--blue] w-[25%] lg:w-[20%] min-h-screen text-white px-4 py-4 text-lg">
       <div className="flex items-center my-12 gap-6 text-2xl">
         <Menu />
-        <Link to="/">Trustbanky</Link>
+        <Link to="/" className="font-semibold">Trustbanky</Link>
       </div>
       <div className="flex items-center my-4 py-2 gap-4 hover:bg-white hover:text-[--blue] px-4 rounded-md">
         <House />
