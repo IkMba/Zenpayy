@@ -17,25 +17,23 @@ export default function Systems() {
           </p>
         </div>
         <div className="flex-1">
-        <img src={img1} alt=""  className="my-8 "/>
+          <img src={img1} alt="" className="my-8 " />
         </div>
       </div>
       <div className="md:flex items-center gap-16 md:px-12 lg:px-24">
-      
         <div className="flex-1 md:order-2">
           <h2 className="text-[2.5rem] lg:text-5xl text-[--dark-shade] font-bold system-header ">
             Your money’s safe space
           </h2>
           <p className="text-[--gray2] text-lg">
-            With Zenpay Secure, you’re entering a new era of money security —
-            where our proactive, purpose-built defences and team of fraud
+            With Trustbanky Secure, you’re entering a new era of money security
+            — where our proactive, purpose-built defences and team of fraud
             specialists help protect every account, 24/7.
           </p>
         </div>
         <div className="flex-1 md:order-1">
-        <img src={img2} alt="" className="my-16"/>
-      </div>
-       
+          <img src={img2} alt="" className="my-16" />
+        </div>
       </div>
       <div className="md:flex items-center gap-16 md:px-12 lg:px-24">
         <div className="flex-1">
@@ -43,12 +41,14 @@ export default function Systems() {
             Life, meet savings
           </h2>
           <p className="text-[--gray2] text-lg">
-            Grow your money with zenpay savings and earn interests on your money. Make your money work for you!.Choose to cash out your interests anytime.
+            Grow your money with Trustbanky savings and earn interests on your
+            money. Make your money work for you!.Choose to cash out your
+            interests anytime.
           </p>
         </div>
         <div className="flex-1">
-        <img src={img3} alt="" className="my-8"/>
-      </div>
+          <img src={img3} alt="" className="my-8" />
+        </div>
       </div>
     </div>
   );

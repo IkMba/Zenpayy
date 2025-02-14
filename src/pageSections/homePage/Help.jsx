@@ -26,12 +26,12 @@ export default function Help() {
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
               <div>
-                <AccordionTrigger>
-                What is Zenpay?
-                </AccordionTrigger>
+                <AccordionTrigger>What is Trustbanky?</AccordionTrigger>
               </div>
               <AccordionContent>
-              A fully integrated suite of financial and payments products.Everything you need for better money management in one place.
+                A fully integrated suite of financial and payments
+                products.Everything you need for better money management in one
+                place.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -41,12 +41,11 @@ export default function Help() {
             <AccordionItem value="item-1">
               <AccordionTrigger>How Secure is my Money?</AccordionTrigger>
               <AccordionContent>
-                All our
-                operations are in compliance with applicable regulations. In
-                addition, we enforce bank-grade security levels and provide you
-                with the option to set up two-factor authentication for key
-                transactions, as an extra layer of protection, over your
-                PiggyVest Account.
+                All our operations are in compliance with applicable
+                regulations. In addition, we enforce bank-grade security levels
+                and provide you with the option to set up two-factor
+                authentication for key transactions, as an extra layer of
+                protection, over your PiggyVest Account.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -54,9 +53,12 @@ export default function Help() {
         <div className="py-4 px-2 hover:bg-[--light-blue] rounded-lg">
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
-              <AccordionTrigger>Are there bank charges when you deduct from my account?</AccordionTrigger>
+              <AccordionTrigger>
+                Are there bank charges when you deduct from my account?
+              </AccordionTrigger>
               <AccordionContent>
-              There are no bank charges for transferring money to your Zenpay account.
+                There are no bank charges for transferring money to your
+                Trustbanky account.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -76,11 +78,11 @@ export default function Help() {
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
               <AccordionTrigger>
-                Does Zenpay have an office?
+                Does Trustbanky have an office?
               </AccordionTrigger>
               <AccordionContent>
                 Yes! We are located at Tesmot House Zurich Switzerland You can
-                also reach us on our email: Email: contact@zenpay.com
+                also reach us on our email: Email: contact@Trustbanky.com
               </AccordionContent>
             </AccordionItem>
           </Accordion>

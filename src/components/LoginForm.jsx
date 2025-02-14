@@ -36,7 +36,7 @@ const formSchema = z.object({
     .min(8, "Password must not be less than eight characters"),
 });
 export default function SignupForm1() {
-  const {loginUser,isLoading} = useLogin()
+  const { loginUser, isLoading } = useLogin();
   const userDetails = useSelector(getRegisterDetails);
   const dispatch = useDispatch();
 
@@ -55,7 +55,7 @@ export default function SignupForm1() {
   async function onSubmit(values) {
     console.log(values);
 
-    await loginUser(values)
+    await loginUser(values);
   }
 
   return (
@@ -67,7 +67,7 @@ export default function SignupForm1() {
         <div className="text-center">
           <h2 className="text-2xl font-bold text-[--blue]">Login</h2>
           <FormDescription className="text-[--gray2] font-medium">
-            Login to your Zenpay account
+            Login to your Trustbanky account
           </FormDescription>
         </div>
 
@@ -98,13 +98,14 @@ export default function SignupForm1() {
           )}
         />
         <div className=" pt-4">
-         
-          {
-              isLoading ?  <Button disabled className="bg-[--blue] text-white w-full">
+          {isLoading ? (
+            <Button disabled className="bg-[--blue] text-white w-full">
               <Loader2 className="animate-spin" />
               Please wait
-            </Button> :  <Button className="bg-[--blue] text-white w-full">Login</Button>
-            }
+            </Button>
+          ) : (
+            <Button className="bg-[--blue] text-white w-full">Login</Button>
+          )}
         </div>
       </form>
     </Form>

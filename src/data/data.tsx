@@ -7,24 +7,24 @@ import user4 from "@/assets/user4.jpg";
 
 export const features = [
   {
-    icon: <ShieldCheck size={32} color="#7ed6df"/>,
+    icon: <ShieldCheck size={32} color="#7ed6df" />,
     features: {
       title: "Secure Transfer",
-      text: "Zenpay ensures your funds reach their destination with top notch security.",
+      text: "Trustbanky ensures your funds reach their destination with top notch security.",
     },
   },
   {
-    icon: <Sparkles size={32} color="#7ed6df"/>,
+    icon: <Sparkles size={32} color="#7ed6df" />,
     features: {
       title: "Seamless Transactions",
       text: "Ensure a streamlined experience from business transactions to personal finance.",
     },
   },
   {
-    icon: <CopyCheck  size={32} color="#7ed6df"/>,
+    icon: <CopyCheck size={32} color="#7ed6df" />,
     features: {
       title: "Multi-currency support",
-      text: "Effortlessly transfer in multiple currencies. Zenpay simplifies international transactions.",
+      text: "Effortlessly transfer in multiple currencies. Trustbanky simplifies international transactions.",
     },
   },
 ];
@@ -32,7 +32,7 @@ export const features = [
 export const reviews = [
   {
     org: "Atlassian",
-    text: "Zenpay has made things so much easier. Can transfer immediately to people. The savings tools are simply amazing. I just adore the app.",
+    text: "Trustbanky has made things so much easier. Can transfer immediately to people. The savings tools are simply amazing. I just adore the app.",
     img: user1,
     firstName: "Eric JB",
     occupation: "Consultant",
@@ -46,7 +46,7 @@ export const reviews = [
   },
   {
     // org: "Loaneer",
-    text: "Been using Zenpay for years and not a bad word to say about them. Always very helpful when things go wrong and easy to contact. Safety is a top priority and I love the one time use disposable cards for buying things online!",
+    text: "Been using Trustbanky for years and not a bad word to say about them. Always very helpful when things go wrong and easy to contact. Safety is a top priority and I love the one time use disposable cards for buying things online!",
     img: user3,
     firstName: "Laura AB",
     occupation: "Mom",
@@ -60,7 +60,7 @@ export const reviews = [
   },
   {
     // org: "Loaneer",
-    text: "I'm extremely satisfied with Zenpay! I've had a great experience using their services: so easy and user-friendly. On top of that, every problem I've encountered was quickly resolved with the help of their kind and effective customer support. 5 stars all the way!",
+    text: "I'm extremely satisfied with Trustbanky! I've had a great experience using their services: so easy and user-friendly. On top of that, every problem I've encountered was quickly resolved with the help of their kind and effective customer support. 5 stars all the way!",
     img: reviewImg1,
     firstName: "Michelle kulman",
     occupation: "Content creator",

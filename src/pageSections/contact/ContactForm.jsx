@@ -23,6 +23,7 @@ import {
   prev,
 } from "@/utils/registerSlice";
 import { Textarea } from "@/components/ui/textarea";
+import { Link } from "react-router-dom";
 
 const formSchema = z
   .object({
@@ -59,9 +60,7 @@ export default function ContactForm() {
   });
 
   function onSubmit(values) {
-    console.log(values);
-    dispatch(addDetails(values));
-    dispatch(next());
+
   }
 
   return (
@@ -132,7 +131,9 @@ export default function ContactForm() {
           />
         {/* </div> */}
         <div className="flex justify-end pt-4">
-          <Button className="bg-[--blue] text-white">Continue</Button>
+          <Button className="bg-[--blue] text-white">
+            <Link to='mailto:ikmba321@gmail.com' className="w-full" > Continue</Link>
+            </Button>
         </div>
       </form>
     </Form>

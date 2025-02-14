@@ -1,4 +1,9 @@
-import { resetStep, resetUserDetails, setCurrentUser, setIsAuthenticated } from "@/utils/registerSlice";
+import {
+  resetStep,
+  resetUserDetails,
+  setCurrentUser,
+  setIsAuthenticated,
+} from "@/utils/registerSlice";
 import { useMutation, useQuery } from "react-query";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -48,16 +53,15 @@ export const useCreateUser = () => {
     onSuccess: (data) => {
       dispatch(setIsAuthenticated(true));
       dispatch(setCurrentUser(data));
-      dispatch(resetStep())
-      dispatch(resetUserDetails())
+      dispatch(resetStep());
+      dispatch(resetUserDetails());
 
       toast.success("User created successfully");
       navigate("/dashboard");
     },
     onError: (err) => {
-      toast.error("Error creating user"),
-      dispatch(resetStep())
-    }
+      toast.error("Error creating user"), dispatch(resetStep());
+    },
   });
 
   return {
@@ -76,7 +80,7 @@ export const useLogin = () => {
       method: "POST",
       // credentials:'include',
       headers: {
-          // Authorization:`Bearer ${}`,
+        // Authorization:`Bearer ${}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
@@ -109,8 +113,7 @@ export const useLogin = () => {
 
       navigate("/dashboard");
     },
-    onError: (err) =>       toast.error("Invalid username or password"),
-    
+    onError: (err) => toast.error("Invalid username or password"),
   });
 
   return {
@@ -160,7 +163,54 @@ export const getUser = () => {
     isSuccess,
   };
 };
-// export const useIsLoggedIn = () => {
+
+export const useGetTransactions = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const getTransactions = async (id) => {
+    const response = await fetch(
+      `${BASE_URL}/api/v1/transactions/${id}`,
+      {
+        method: "GET",
+        // credentials:'include',
+        headers: {
+          // Authorization:`Bearer ${}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    const res = await response.json();
+    const transactions = res.data.data;
+    console.log(transactions);
+
+    if (!response.ok) {
+      // console.log(res)
+      // throw new Error(res.error);
+      console.log("error");
+    }
+
+    return transactions;
+  };
+
+  const {
+    mutateAsync: userTransactions,
+    isLoading,
+    isError,
+    isSuccess,
+  } = useMutation({
+    mutationFn: getTransactions,
+    onSuccess: (data) => {},
+    // onError: (err) =>       toast.error("Invalid username or password"),
+  });
+
+  return {
+    userTransactions,
+    isLoading,
+    isError,
+    isSuccess,
+  };
+}; // export const useIsLoggedIn = () => {
 //   const getLoggedIn = async () => {
 //     const response = await fetch(`http://127.0.0.1:4000/api/v1/users`, {
 //       method: "GET",

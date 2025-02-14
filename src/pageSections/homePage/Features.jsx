@@ -65,7 +65,8 @@ export default function Features() {
             User-Friendly Interface
           </h3>
           <h4 className="text-sm text-[--gray2]">
-            Zenpay is designed with you in mind,featuring an intuitive interface.
+            Trustbanky is designed with you in mind,featuring an intuitive
+            interface.
           </h4>
         </div>
       </div>

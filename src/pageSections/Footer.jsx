@@ -6,10 +6,11 @@ export default function Footer() {
     <div className="py-8 px-12 md:px-24 md:py-24 lg:flex gap-36">
       <div className="w-80 text-[--gray] text-sm ">
         <h2 className="text-2xl font-semibold my-4 text-[--dark-shade]">
-          Zenpay
+          Trustbanky
         </h2>
         <h4>
-          Reach your financial goals with super secure and efficient systems. Build the life you want with zenpay.
+          Reach your financial goals with super secure and efficient systems.
+          Build the life you want with Trustbanky.
         </h4>
       </div>
       <div className="flex flex-col md:flex-row flex-wrap gap-6 md:gap-12 md:items-center mt-6 md:mt-0">

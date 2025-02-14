@@ -8,7 +8,9 @@ const Nav = () => {
   return (
     <div className="flex items-center justify-between px-6 bg-inherit py-4 md:px-12 absolute top-0 left-0 right-0">
       <div className="logo">
-        <Link to='/' className="text-[--torq-blue] text-2xl md:text-3xl">Zenpay</Link>
+        <Link to="/" className="text-[--torq-blue] text-2xl md:text-3xl">
+          Trustbanky
+        </Link>
       </div>
       <div className="md:hidden">
         <MobileNav />
