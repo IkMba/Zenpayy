@@ -116,17 +116,13 @@ export default function DepositForm({ setPaymentMethod }) {
           )}
         />
         
-            {
+            {/* {
               isLoading ?  <Button disabled className="bg-[--blue]  text-white w-full">
               <Loader2 className="animate-spin" />
               Please wait
             </Button> :   <Button type="submit" className="bg-[--blue]  text-white w-full"  ><Link to='https://pay.binance.com/' target="_blank" rel="noopener noreferrer" className="w-full">Continue</Link></Button>
-            }
-        
-
-        {/* <div className="flex justify-end pt-4">
-          <Button className="bg-[--blue] text-white w-full">Continue</Button>
-        </div> */}
+            } */}
+      
       </form>
     </Form>
   );
